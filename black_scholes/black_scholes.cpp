@@ -23,6 +23,7 @@ int main(int argc, char **argv) {
 		("dividendYield", po::value<Real>(&dividendYield)->default_value(0.0), "dividend yield")
 		("riskFree", po::value<Real>(&riskFree)->default_value(0.03), "risk free rate")
 		("sigma", po::value<Volatility>(&sigma)->default_value(0.20), "strike");
+	po::variables_map vm;
 	po::store(po::parse_command_line(argc, argv, desc), vm);
 	po::notify(vm);    
 	if (vm.count("help")) {
